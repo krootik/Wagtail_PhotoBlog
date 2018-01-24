@@ -1,0 +1,233 @@
+/*!
+ * Start Bootstrap - Resume v4.0.0-beta.2 (https://startbootstrap.com/template-overviews/resume)
+ * Copyright 2013-2017 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-resume/blob/master/LICENSE)
+ */
+@import url('https://fonts.googleapis.com/css?family=Marmelad');
+body {
+    font-family: 'Marmelad', sans-serif;
+    padding-top: 54px;
+    color: #868e96
+}
+
+@media (min-width:992px) {
+    body {
+        padding-top: 0;
+        padding-left: 17rem
+    }
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Marmelad', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #5db4c0;
+}
+
+h1 {
+    font-size: 4rem;
+    line-height: 5.5rem;
+}
+
+h2 {
+    font-size: 2.5rem;
+}
+
+
+.subheading {
+    text-transform: uppercase;
+    font-weight: 500;
+    font-family: 'Saira Extra Condensed', serif;
+    font-size: 1.35rem
+}
+
+.list-social-icons a {
+    color: #495057
+}
+
+.list-social-icons a:hover {
+    color: #5db4c0;
+}
+
+.list-social-icons a .fa-lg {
+    font-size: 1.25rem
+}
+
+.list-icons {
+    font-size: 3rem
+}
+
+.list-icons .list-inline-item i:hover {
+    color: #bd5d38
+}
+.list-inline-item {
+    padding-left: 0;
+}
+
+#sideNav .navbar-nav .nav-item .nav-link {
+    font-weight: 600;
+    text-transform: uppercase
+}
+
+@media (min-width:992px) {
+    #sideNav {
+        text-align: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        width: 17rem;
+        height: 100vh
+    }
+    #sideNav .navbar-brand {
+        display: flex;
+        margin: auto auto 0;
+        padding: .5rem
+    }
+    #sideNav .navbar-brand .img-profile {
+        max-width: 10rem;
+        max-height: 10rem;
+        border: .5rem solid rgba(255, 255, 255, .2)
+    }
+    #sideNav .navbar-collapse {
+        display: flex;
+        align-items: flex-start;
+        flex-grow: 0;
+        width: 100%;
+        margin-bottom: auto
+    }
+    #sideNav .navbar-collapse .navbar-nav {
+        flex-direction: column;
+        width: 100%
+    }
+    #sideNav .navbar-collapse .navbar-nav .nav-item {
+        display: block
+    }
+    #sideNav .navbar-collapse .navbar-nav .nav-item .nav-link {
+        display: block
+    }
+}
+
+section.resume-section {
+    border-bottom: 1px solid #dee2e6;
+    padding-top: 5rem!important;
+    padding-bottom: 5rem!important
+}
+
+section.resume-section .resume-item .resume-date {
+    min-width: none
+}
+
+@media (min-width:768px) {
+    section.resume-section {
+        min-height: 100vh
+    }
+    section.resume-section .resume-item .resume-date {
+        min-width: 18rem
+    }
+}
+
+@media (min-width:992px) {
+    section.resume-section {
+        padding-top: 3rem!important;
+        padding-bottom: 3rem!important
+    }
+}
+
+.bg-primary {
+    background-color: #bd5d38!important
+}
+
+.text-primary {
+    color: #bd5d38!important
+}
+
+a {
+    color: #bd5d38;
+    outline: none;
+}
+
+a:active, a:focus, a:hover {
+    color: #5db4c0;
+}
+.ion-minus{
+    padding:0px 10px;
+}
+
+.blog {
+	background-color:#f6f6f6;
+	padding:20px 0px;
+    }
+
+.blog .blog-column a{
+    color: #5db4c0;
+    text-decoration: none;
+    position: relative;
+}
+
+.blog  span {
+    font-size: 17px;
+    font-weight: 700;
+    }
+
+.blog  .blog-detail {
+    margin-top: 10px;
+}
+.blog  .blog-detail li{
+    display: inline-block;
+    padding-right: 5px;
+    padding-left: 5px;
+}
+
+.fa.fa-user, .fa.fa-clock-o {
+    padding-right: 10px;
+    color: #909090;
+}
+/* Create four equal columns that sits next to each other */
+.column {
+    -ms-flex: 25%; /* IE10 */
+    flex: 25%;
+    max-width: 25%;
+    padding: 0 4px;
+}
+
+.column img {
+    margin-top: 8px;
+    vertical-align: middle;
+}
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media (max-width: 800px) {
+    .column {
+        -ms-flex: 50%;
+        flex: 50%;
+        max-width: 50%;
+    }
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media (max-width: 600px) {
+    .column {
+        -ms-flex: 100%;
+        flex: 100%;
+        max-width: 100%;
+    }
+}
+.centered {
+    position: absolute;
+    background-color: #111;
+    opacity: 0.5;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -100%);
+    width:100%;
+    text-align: center;
+}
+
+.img-responsive{
+    display: block;
+    max-width: 100%;
+    height: auto;
+    text-align: center;
+}

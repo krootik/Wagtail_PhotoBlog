@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+
+{% load wagtailcore_tags wagtailimages_tags %}
+
+{% block body_class %}template-newspage{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        {% for item in page.gallery_images.all %}
+                    {% image item.image original class="img-responsive" %}
+        {% endfor %}
+        <div style="margin:60px 0px;"></div>
+    </div>
+
+    <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+        <h4><span class="ion-minus"></span>{{ page.title }}<span class="ion-minus"></span></h4>
+    </div>
+    <div class="col-lg-12 col-lg-offset-3">
+    {% for block in page.body %}
+        {% if block.block_type == 'heading' %}
+            {{ block.value }}
+            {% elif block.block_type == 'image' %}
+                {% image block.value width-400 %}
+            {% else %}
+            <section class="block-{{ block.block_type }}">
+                {% include_block block %}
+            </section>
+        {% endif %}
+    {% endfor %}
+    </div>
+</div>
+    <div class="col-lg-8 col-xs-12">
+        <div class="blog-column">
+            <ul class="blog-detail list-inline">
+                {% if page.tags.all.count %}
+                    {% for tag in page.tags.all %}
+                    <li><i class="fa fa-tag"></i>
+                        <a href="{% slugurl 'tags' %}?tag={{ tag }}">{{ tag }}</button></a>
+                    {% endfor %}
+                    </li>
+                {% endif %}
+            </ul>
+            <ul class="blog-detail list-inline">
+                <li><i class="fa fa-user"></i>автор: {{ page.author }}</li>
+                <li><i class="fa fa-clock-o"></i>{{ page.date }}</li>
+            </ul>
+
+{% with categories=page.categories.all %}
+    {% if categories %}
+        <h3>Posted in:</h3>
+        <ul>
+            {% for category in categories %}
+                <li style="display: inline">
+                    {% image category.icon fill-32x32 style="vertical-align: middle" %}
+                    {{ category.name }}
+                </li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+{% endwith %}
+    <p><a href="{{ page.get_parent.url }}">Назад</a></p>
+
+{% endblock %}

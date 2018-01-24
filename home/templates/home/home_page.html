@@ -1,7 +1,55 @@
-{% extends "base.html" %}
-{%  load  wagtailcore_tags  %}
-{% block body_class %}template-homepage{% endblock %}
+{% extends "base.html" %} {% load wagtailcore_tags wagtailimages_tags %} {% block body_class %}template-homepage{% endblock %} {% block content %} {% for title in page.titles %}
+<div class="row" id="news">
+    <div class="col-lg-12 col-lg-offset-3 text-center">
+        <h4><span class="ion-minus"></span>{{ title.title }}<span class="ion-minus"></span></h4>
+        <p>{{ title.intro }}</p> <br />
+    </div>
 
-{% block content %}
-{{  page.body | richtext  }}
+</div>
+{% endfor%} {% for post in page.posts %}
+<div class="row">
+    <div class="col-sm-4 col-xs-12">
+        {% with post.main_image as main_image %} {% if main_image %}
+        <a href="{% pageurl post %}">{% image main_image fill-400x200 class="img-responsive" %}</a> {% endif %} {% endwith %}
+    </div>
+    <div class="col-sm-8 col-xs-12">
+        <div class="blog-column">
+            <span><a href="{% pageurl post %}">{{ post.title }}</a></span>
+            <ul class="blog-detail list-inline">
+                <li><i class="fa fa-user"></i>{{ post.author }}</li>
+                <li><i class="fa fa-clock-o"></i>{{ post.date }}</li>
+                {% if post.tags.all.count %} {% for tag in post.tags.all %}
+                <li><i class="fa fa-tag"></i>
+                    <a href="{% slugurl 'tags' %}?tag={{ tag }}">{{ tag }}</a> {% endfor %}</li>
+                {% endif %}
+            </ul>
+            {% for block in post.body %} {% if block.block_type == 'heading' %} {{ block.value}} {% endif %} {% if block.block_type == 'paragraph' %} {{ block.value|truncatewords_html:35 }} {% endif %} {% endfor %}
+            <a href="{% pageurl post %}">читаем далее</a>
+        </div>
+    </div>
+</div>
+<div style="margin:60px 0px;"></div>
+{% endfor %} {% for titleGallery in page.titleGallery %}
+<div class="row" id="albums">
+    <div class="col-lg-12 col-lg-offset-3 text-center">
+        <h4><span class="ion-minus"></span>{{ titleGallery.title }}<span class="ion-minus"></span></h4>
+        <p>{{titleGallery.intro}} </p><br>
+    </div>
+</div>
+{% endfor %}
+<div class="row">
+    {% for name in page.names %}
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" data-aos="fade-right">
+        {% image name.main_image original as tmp_photo %}
+        <a href="{% pageurl name %}"><img src="{{ tmp_photo.url }}"  alt="{{ tmp_photo.alt }}" style="width:100%" /></a>
+        <div class="col-lg-12 col-xs-12">
+            <div class="blog-column">
+                <div class="centered">
+                    <span><a href="{% pageurl name %}">{{ name.title }}</a></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
 {% endblock %}
