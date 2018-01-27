@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 from __future__ import absolute_import, unicode_literals
-
+# -*- coding: utf-8 -*-
 import os
 import sys
 

@@ -1,9 +1,9 @@
-{% extends "base.html" %} {% load wagtailcore_tags wagtailimages_tags %} {% block body_class %}template-homepage{% endblock %} {% block content %} {% for title in page.titles %}
+{% extends "base.html" %} {% load  wagtailcore_tags wagtailimages_tags %} {% block body_class %}template-homepage{% endblock %} {% block content %} {% for title in page.titles %}
 <div class="row" id="news">
     <div class="col-lg-12 col-lg-offset-3 text-center">
-        <h4><span class="ion-minus"></span>{{ title.title }}<span class="ion-minus"></span></h4>
+        <h4><span class="ion-minus"></span>Последние {{ title.title }}<span class="ion-minus"></span></h4>
         <p>{{ title.intro }}</p> <br />
-    </div>
+</div>
 
 </div>
 {% endfor%} {% for post in page.posts %}
@@ -29,7 +29,10 @@
     </div>
 </div>
 <div style="margin:60px 0px;"></div>
-{% endfor %} {% for titleGallery in page.titleGallery %}
+
+{% endfor %}
+<hr >
+{% for titleGallery in page.titleGallery %}
 <div class="row" id="albums">
     <div class="col-lg-12 col-lg-offset-3 text-center">
         <h4><span class="ion-minus"></span>{{ titleGallery.title }}<span class="ion-minus"></span></h4>
@@ -52,4 +55,14 @@
     </div>
     {% endfor %}
 </div>
+<div style="margin:60px 0px;"></div>
+<hr >
+<div class="row">
+        <div class="col-lg-12 col-lg-offset-3 text-center">
+            <h4><span class="ion-minus"></span>Instagram<span class="ion-minus"></span></h4>
+</div>
+</div>
+
+
+        {% include "includes/footer.html" %}
 {% endblock %}

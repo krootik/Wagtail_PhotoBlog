@@ -68,13 +68,13 @@
             </ul>
         </div>
         <div style="margin:60px 0px;">
-        <form action="{% url 'search' %}" method="get">
-            <input type="text" name="query" value="{{ search_query }}">
-            <input type="submit" value="Поиск">
-        </form>
-        </div>
 
-         <div class="row">
+        <!--<form action="{% url 'search' %}" method="get">
+            <span class="icon"><i class="fa fa-search"></i></span>
+            <input type="search" name="query" placeholder="Что ищем?..." value="{{ search_query }}">
+            
+        </form>-->
+        </div>         
             <ul class="list-inline list-social-icons mb-0">
               <li class="list-inline-item">
                 <a href="https://www.instagram.com/y.krutskiy/">
@@ -108,11 +108,9 @@
                   </span>
                 </a>
               </li>
-            </ul>
-          </div>
+            </ul>       
+      </nav>
 
-            </div>
-        </nav>
 <div class="blog">
     <div class="container">
         {% block content %}{% endblock %}

@@ -226,8 +226,12 @@ a:active, a:focus, a:hover {
 }
 
 .img-responsive{
-    display: block;
+    display:inline-block;
     max-width: 100%;
     height: auto;
     text-align: center;
+}
+.block_centr{
+    text-align: center;
+    padding: 15px; 
 }

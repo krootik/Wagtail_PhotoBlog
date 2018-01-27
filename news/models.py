@@ -1,3 +1,4 @@
+#-*- coding: utf-8 -*-
 from django import forms
 from django.db import models
 from wagtail.wagtailcore import blocks
@@ -13,6 +14,7 @@ from wagtail.wagtailimages.blocks import ImageChooserBlock
 from wagtail.wagtailembeds.blocks import EmbedBlock
 from wagtail.wagtailimages.edit_handlers import ImageChooserPanel
 from wagtail.wagtailsearch import index
+
 
 @register_snippet
 class NewsCategory(models.Model):

@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 from __future__ import absolute_import, unicode_literals
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
+# -*- coding: utf-8 -*-
 import os
 
 PROJECT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -51,7 +52,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-]
+    'sorl.thumbnail',
+    'django_instagram',]
 
 MIDDLEWARE = [
     'django.contrib.sessions.middleware.SessionMiddleware',

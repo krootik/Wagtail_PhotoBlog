@@ -1,0 +1,18 @@
+{% load static wagtailcore_tags %}
+{% load instagram_client %} {% instagram_user_recent_media y.krutskiy %}
+<div class="row">
+        <div class="col-sm-12 col-xs-12">  
+            <div class="block_centr">
+                     {% for media in recent_media %}
+                    <a data-fancybox="gallery" href="{{ media.display_src }}" target="_blank" title="{{ media.caption }}">
+                        <img src="{{ media.thumbnail_src|thumbnail }}" style="width:7%" class="img-responsive" />
+                    </a>
+                    {% endfor %}
+            </div>         
+        </div>
+        <div class="col-sm-12 col-xs-12">
+            <div class="block_centr">
+                    Copyright © 2018. Made by Krutskiy with <a href="http://wagtail.io">Wagtail</a>
+            </div>
+        </div>
+    </div>
